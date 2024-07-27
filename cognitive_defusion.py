@@ -11,14 +11,14 @@ def get_input(prompt):
 
 def process_thought(thought):
     print("\n--- Cognitive Defusion Exercise ---")
-    print(f"I'm noticing that I'm having the thought that {thought}")
+    print(f"I'm noticing that I'm having the following thought: '{thought}'")
 
     # Explore the function of the thought
-    function = get_input("What is the function of this thought? What is it alerting you to? (Type your response):")
-    themes = get_input("Name your mind's favorite themes or 'signature moves' that relate to this thought (Type your response):")
-    helpfulness = get_input("Is this thought a helpful guide? (yes/no):")
+    function = get_input("\nWhat is the function of this thought? What is it alerting you to? (Type your response):")
+    themes = get_input("\nName your mind's favorite themes or 'signature moves' that relate to this thought (Type your response):")
+    helpfulness = get_input("\nIs this thought a helpful guide? (yes/no):")
     if helpfulness.lower() == 'yes':
-        action_taken = get_input("What wise action does this thought suggest? (Type your response):")
+        action_taken = get_input("\nWhat wise action does this thought suggest? (Type your response):")
         alternative_action = None
     else:
         action_taken = None
