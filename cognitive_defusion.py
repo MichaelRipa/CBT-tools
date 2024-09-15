@@ -5,6 +5,8 @@ from datetime import datetime
 import sys
 import os
 
+from config import repo_path
+
 def get_input(prompt):
     result = input(prompt)
     return result
@@ -35,7 +37,7 @@ def process_thought(thought):
     }
 
     # Save to JSON file
-    data_dir = 'data'
+    data_dir = os.path.join(repo_path, 'data')
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     file_path = os.path.join(data_dir, 'cognitive_defusion_records.json')

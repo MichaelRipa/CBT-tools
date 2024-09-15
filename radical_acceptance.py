@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 import os
 import sys
+from config import repo_path
 
 def get_input(prompt):
     print(prompt)
@@ -30,7 +31,7 @@ def process_thought(thought):
     }
 
     # Save to JSON file
-    data_dir = 'data'
+    data_dir = os.path.join(repo_path,'data')
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     file_path = os.path.join(data_dir, 'radical_acceptance_records.json')
