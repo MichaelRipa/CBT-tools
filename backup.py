@@ -14,6 +14,8 @@ gauth.LoadCredentialsFile("credentials.json")
 
 if gauth.credentials is None:
     # Authenticate if credentials are not available or expired
+    gauth.GetFlow()
+    gauth.flow.params.update({'access_type': 'offline', 'prompt': 'consent'})
     gauth.LocalWebserverAuth()  # Creates local web server and auto-handles authentication
     # Save credentials for the next run
     gauth.SaveCredentialsFile("credentials.json")
